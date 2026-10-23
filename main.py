@@ -4,7 +4,8 @@ from hotel.rooms import(
     show_rooms,
     get_available_rooms,
     find_room_by_id,
-    update_room_status
+    update_room_status,
+    find_room_by_type
 )
 
 from hotel.bookings import(
@@ -31,7 +32,9 @@ def main():
         print()
         print("3. Show bookings.")
         print()
-        print("4. Exit")
+        print("4. Find a room by its type.")
+        print()
+        print("5. Exit")
 
         choice = input("Choose an option: ")
 
@@ -72,6 +75,39 @@ def main():
                     show_bookings(bookings)
 
             case "4":
+                print()
+                print("These are our room types:")
+                print("1. Single")
+                print()
+                print("2. Double")
+                print()
+                print("3. Family")
+                print()
+                print("4. Suite")
+                print()
+
+                choose_type = input("What kind of room are you looking for? ")
+
+                match choose_type:
+                    case "1":
+                        room_type = "single"
+                    case "2":
+                        room_type = "double"
+                    case "3": 
+                        room_type = "family"
+                    case "4":
+                        room_type = "suite"
+                    case _: 
+                        print("Invalid option.")
+                        continue
+                matching_rooms = find_room_by_type((get_available_rooms(rooms)), room_type)
+                if len(matching_rooms):
+                    show_rooms(matching_rooms)
+                else:
+                    print("No room available in this type.")
+
+
+            case "5":
                 print("Goodbye!")
                 break
 

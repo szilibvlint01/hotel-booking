@@ -36,3 +36,10 @@ def update_room_status(rooms, booking):
     if room:
         room["available"] = False
 
+def find_room_by_type(rooms, room_type):
+    correct_type = []
+    
+    for room in rooms:
+        if room["type"] == room_type:
+            correct_type.append(room)
+    return correct_type
