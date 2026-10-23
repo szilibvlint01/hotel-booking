@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "type": "single",
+    "price": 22000,
+    "available": true
+  },
+  {
+    "id": 102,
+    "type": "double",
+    "price": 35000,
+    "available": true
+  },
+  {
+    "id": 103,
+    "type": "double",
+    "price": 35000,
+    "available": false
+  },
+  {
+    "id": 201,
+    "type": "family",
+    "price": 52000,
+    "available": true
+  },
+  {
+    "id": 202,
+    "type": "family",
+    "price": 52000,
+    "available": false
+  },
+  {
+    "id": 301,
+    "type": "suite",
+    "price": 85000,
+    "available": true
+  }
+]
